@@ -5,3 +5,4 @@ function alertUser() {
 }
 
 buttonPress.addEventListener("click", alertUser);
+
