@@ -44,10 +44,20 @@
 const buttonContainer = document.querySelector(".button-container");
 
 function changeBG(event) {
-    if (event.target.tagname === 'BUTTON'){
-        event.target.style.backgroundColor = 'pink';
+    if (event.target.tagName === 'BUTTON'){
+        event.target.classList.add('pinkBG');
     }
 
 }
 
 buttonContainer.addEventListener("click", changeBG);
+
+function changeTextColor(event) {
+    if(event.target.tagName === 'BUTTON') {
+        let myColor = event.target.textContent;
+        event.target.style.color = myColor;
+    }
+  
+}
+
+buttonContainer.addEventListener('click', changeTextColor);
