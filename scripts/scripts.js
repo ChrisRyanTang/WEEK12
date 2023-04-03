@@ -1,4 +1,15 @@
-// let buttonPress = document.querySelector('#click');
+let buttonPress = document.querySelector('#click');
+
+function addNewButtonAndPara(event) {
+    let newButton = document.createElement('button');
+    document.body.appendChild(newButton);
+    newButton.textContent = 'BLUE';
+    newButton.addEventListener('click', changeBG);
+    newButton.addEventListener('click', changeTextColor);
+    
+}
+
+buttonPress.addEventListener("click", addNewButtonAndPara);
 
 // function alertUser() {
 //     buttonPress.removeEventListener("click", alertUser);
@@ -44,10 +55,20 @@
 const buttonContainer = document.querySelector(".button-container");
 
 function changeBG(event) {
-    if (event.target.tagname === 'BUTTON'){
-        event.target.style.backgroundColor = 'pink';
+    if (event.target.tagName === 'BUTTON'){
+        event.target.classList.add('pinkBG');
     }
 
 }
 
 buttonContainer.addEventListener("click", changeBG);
+
+function changeTextColor(event) {
+    if(event.target.tagName === 'BUTTON') {
+        let myColor = event.target.textContent;
+        event.target.style.color = myColor;
+    }
+  
+}
+
+buttonContainer.addEventListener('click', changeTextColor);
