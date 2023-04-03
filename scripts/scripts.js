@@ -1,4 +1,15 @@
-// let buttonPress = document.querySelector('#click');
+let buttonPress = document.querySelector('#click');
+
+function addNewButtonAndPara(event) {
+    let newButton = document.createElement('button');
+    document.body.appendChild(newButton);
+    newButton.textContent = 'BLUE';
+    newButton.addEventListener('click', changeBG);
+    newButton.addEventListener('click', changeTextColor);
+    
+}
+
+buttonPress.addEventListener("click", addNewButtonAndPara);
 
 // function alertUser() {
 //     buttonPress.removeEventListener("click", alertUser);
